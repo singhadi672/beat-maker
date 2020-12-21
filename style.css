@@ -73,40 +73,40 @@ header {
 }
 
 .snare-pad {
-  background-color: rgb(240, 98, 98);
+  background-color: rgb(124, 12, 12);
 }
 
 .snare-pad.active {
-  background-color: rgb(224, 62, 62);
+  background-color: rgb(226, 159, 159);
 }
 
 .kick-pad {
-  background-color: rgb(103, 166, 224);
+  background-color: rgb(8, 54, 97);
 }
 .kick-pad.active {
-  background-color: rgb(47, 141, 230);
+  background-color: rgb(149, 200, 248);
 }
 
 .clap-pad {
-  background-color: rgb(194, 211, 121);
+  background-color: rgb(100, 121, 8);
 }
 .clap-pad.active {
-  background-color: rgb(147, 173, 29);
+  background-color: rgb(223, 238, 157);
 }
 
 .hihat-pad {
-  background-color: rgb(146, 209, 105);
+  background-color: rgb(11, 112, 53);
 }
 .hihat-pad.active {
-  background-color: rgb(82, 163, 28);
+  background-color: rgb(180, 241, 138);
 }
 
 .shaker-pad {
-  background-color: rgb(206, 116, 201);
+  background-color: rgb(126, 14, 120);
 }
 
 .shaker-pad.active {
-  background-color: rgb(214, 51, 206);
+  background-color: rgb(216, 131, 212);
 }
 
 .play {
@@ -147,7 +147,21 @@ header {
 
 #bpm {
   width: 30%;
-  margin-top: 2rem;
-  margin-bottom: 10rem;
+  margin-top: 1.5rem;
   background-color: black;
+}
+
+.range {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 8rem;
+}
+
+@keyframes playtrack {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }

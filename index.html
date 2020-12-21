@@ -131,7 +131,8 @@
             </div>
         </div>
         <button class="play">Play!</button>
-        <input type="range" id="bpm" name="bpm" value="60" min="60" max="450">
+        <input type="range" id="bpm" name="bpm" value="60" min="60" max="450" onchange="drumstick.updateValue(this.value)">
+        <p class="range"></p>
     </div>
     <audio class="kick-audio" src="./sounds/kick/kick-808.wav"></audio>
     <audio class="clap-audio" src="./sounds/clap/clap-808.wav"></audio>
