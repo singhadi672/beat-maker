@@ -4,18 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" href="undraw_compose_music_ovo2.png">
     <title>Beats- By Dr. Adi | beatsMakr</title>
 </head>
 <body>
+    <header>
+        <h1>Make-Your-Own-Music!!</h1>
+    </header>
     <div class="sequencer">
         <div class="kick-track">
             <div class="controls">
                 <h1>Kick</h1>
-                <button data-track="0" id="mute mute-kick"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+                <button data-track="0" class="mute mute-kick"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+                <select  name="kick-select" class="select kick-select">
+                    <option value="./sounds/kick/kick-808.wav">kick-808</option>
+                    <option value="./sounds/kick/kick-big.wav">kick-big</option>
+                    <option value="./sounds/kick/kick-classic.wav">kick-classic</option>
+                    <option value="./sounds/kick/kick-heavy.wav">kick-heavy</option>
+                    <option value="./sounds/kick/kick-acoustic01.wav">kick-acoustic01</option>
+                    <option value="./sounds/kick/kick-electron01.wav">kick-electron01</option>
+                </select>
+            </div>
+            <div class="kick-pads">
+                <div class="pads kick-pad b00"></div>
+                <div class="pads kick-pad b01"></div>
+                <div class="pads kick-pad b02"></div>
+                <div class="pads kick-pad b03"></div>
+                <div class="pads kick-pad b04"></div>
+                <div class="pads kick-pad b05"></div>
+                <div class="pads kick-pad b06"></div>
+                <div class="pads kick-pad b07"></div>
             </div>
         </div>
+        <div class="clap-track">
+            <div class="controls">
+                <h1>Clap</h1>
+                <button data-track="1" class="mute mute-clap"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+                <select  name="clap-select" class=" select clap-select">
+                    <option value="./sounds/clap/clap-808.wav">clap-808</option>
+                    <option value="./sounds/clap/clap-analog.wav">clap-analog</option>
+                    <option value="./sounds/clap/clap-crushed.wav">clap-crushed</option>
+                    <option value="./sounds/clap/clap-fat.wav">clap-fat</option>
+                    <option value="./sounds/clap/clap-slapper.wav">clap-slapper</option>
+                    <option value="./sounds/clap/clap-tape.wav">clap-tape</option>
+                </select>
+            </div>
+            <div class="clap-pads">
+                <div class="pads clap-pad b00"></div>
+                <div class="pads clap-pad b01"></div>
+                <div class="pads clap-pad b02"></div>
+                <div class="pads clap-pad b03"></div>
+                <div class="pads clap-pad b04"></div>
+                <div class="pads clap-pad b05"></div>
+                <div class="pads clap-pad b06"></div>
+                <div class="pads clap-pad b07"></div>
+            </div>
+        </div>
+        <div class="snare-track">
+            <div class="controls">
+                <h1>Snare</h1>
+                <button data-track="2" class="mute mute-snare"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+                <select  name="snare-select" class=" select snare-select">
+                    <option value="./sounds/snare/snare-808.wav">snare-808</option>
+                    <option value="./sounds/snare/snare-analog.wav">snare-analog</option>
+                    <option value="./sounds/snare/snare-acoustic01.wav">snare-acoustic</option>
+                    <option value="./sounds/snare/snare-big.wav">snare-big</option>
+                    <option value="./sounds/snare/snare-lofi01.wav">snare-lofi01</option>
+                    <option value="./sounds/snare/snare-tape.wav">snare-tape</option>
+                </select>
+            </div>
+            <div class="snare-pads">
+                <div class="pads snare-pad b00"></div>
+                <div class="pads snare-pad b01"></div>
+                <div class="pads snare-pad b02"></div>
+                <div class="pads snare-pad b03"></div>
+                <div class="pads snare-pad b04"></div>
+                <div class="pads snare-pad b05"></div>
+                <div class="pads snare-pad b06"></div>
+                <div class="pads snare-pad b07"></div>
+            </div>
+        </div>
+        <div class="hihat-track">
+            <div class="controls">
+                <h1>Hi-hat</h1>
+                <button data-track="3" class="mute mute-hihat"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+                <select  name="hihat-select" class="select hihat-select">
+                    <option value="./sounds/hihat/hihat-808.wav">hihat-808</option>
+                    <option value="./sounds/hihat/hihat-analog.wav">hihat-analog</option>
+                    <option value="./sounds/hihat/hihat-digital.wav">hihat-digital</option>
+                    <option value="./sounds/hihat/hihat-plain.wav">hihat-plain</option>
+                    <option value="./sounds/hihat/hihat-acoustic01.wav">hihat-acoustic01</option>
+                    <option value="./sounds/hihat/hihat-reso.wav">hihat-reso</option>
+                </select>
+            </div>
+            <div class="hihat-pads">
+                <div class="pads hihat-pad b00"></div>
+                <div class="pads hihat-pad b01"></div>
+                <div class="pads hihat-pad b02"></div>
+                <div class="pads hihat-pad b03"></div>
+                <div class="pads hihat-pad b04"></div>
+                <div class="pads hihat-pad b05"></div>
+                <div class="pads hihat-pad b06"></div>
+                <div class="pads hihat-pad b07"></div>
+            </div>
+        </div>
+        <div class="shaker-track">
+            <div class="controls">
+                <h1>Shaker</h1>
+                <button data-track="4" class="mute mute-shaker"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+                <select  name="shaker-select" class="select shaker-select">
+                    <option value="./sounds/shaker/shaker-shuffle.wav">shaker-shuffle</option>
+                    <option value="./sounds/shaker/shaker-analog.wav">shaker-analog</option>
+                    <option value="./sounds/shaker/shaker-suckup.wav">shaker-suckup</option>
+                </select>
+            </div>
+            <div class="shaker-pads">
+                <div class="pads shaker-pad b00"></div>
+                <div class="pads shaker-pad b01"></div>
+                <div class="pads shaker-pad b02"></div>
+                <div class="pads shaker-pad b03"></div>
+                <div class="pads shaker-pad b04"></div>
+                <div class="pads shaker-pad b05"></div>
+                <div class="pads shaker-pad b06"></div>
+                <div class="pads shaker-pad b07"></div>
+            </div>
+        </div>
+        <button class="play">Play!</button>
+        <input type="range" id="bpm" name="bpm" value="60" min="60" max="450">
     </div>
-    
+    <audio class="kick-audio" src="./sounds/kick/kick-808.wav"></audio>
+    <audio class="clap-audio" src="./sounds/clap/clap-808.wav"></audio>
+    <audio class="snare-audio" src="./sounds/snare/snare-808.wav"></audio>
+    <audio class="hihat-audio" src="./sounds/hihat/hihat-808.wav"></audio>
+    <audio class="shaker-audio" src="./sounds/shaker/shaker-analog.wav"></audio>
+
+    <footer class="footer">
+        <p>made with 💖 by Aditya Singh ||
+        visit me @: <a href="https://github.com/singhadi672"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/aditya-singh-6a6b35177"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></p>
+        <p><sup><small>&#169</small></sup>Aditya Singh || visit my portfolio<a style="color: chartreuse;" href="https://adityasingh.netlify.app/" target="_blank">here</a></p>
+    </footer>
     <script src="https://use.fontawesome.com/949341a76b.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
