@@ -8,6 +8,8 @@ class DrumKick{
         this.hihatAudio = document.querySelector(".hihat-audio");
         this.shakerAudio = document.querySelector(".shaker-audio");
         this.range = document.querySelector(".range");
+        this.selects = document.querySelectorAll("select");
+        this.muteAudio = document.querySelectorAll(".mute");
         
         this.index = 0;
         this.beats = 60;
@@ -35,6 +37,9 @@ class DrumKick{
                 if(bar.classList.contains("kick-pad")){
                     this.kickAudio.currentTime = 0;
                     this.kickAudio.play();
+                    this.kickAudio.muted = false;
+
+                   
                 }
                 if(bar.classList.contains("snare-pad")){
                     this.snareAudio.currentTime = 0;
@@ -57,22 +62,89 @@ class DrumKick{
         this.index++;
     }
 
-    start(){
+    muteAudioButton(e){
+        e.target.classList.toggle("active");
 
+        const trackId = e.target.getAttribute("data-track");
+        if(e.target.classList.contains("active")){
+            switch(trackId){
+                case "0":
+                    this.kickAudio.volume = 0;
+                    break;
+                case "1":
+                    this.clapAudio.volume = 0;
+                    break;
+                case "2":
+                    this.snareAudio.volume = 0;
+                    break;
+                case "3":
+                    this.hihatAudio.volume = 0;
+                    break;
+                case "4":
+                    this.shakerkAudio.volume = 0;
+                    break;
+            }
+        }else{
+            switch(trackId){
+                case "0":
+                    this.kickAudio.volume = 1;
+                    break;
+                case "1":
+                    this.clapAudio.volume = 1;
+                    break;
+                case "2":
+                    this.snareAudio.volume = 1;
+                    break;
+                case "3":
+                    this.hihatAudio.volume = 1;
+                    break;
+                case "4":
+                    this.shakerkAudio.volume = 1;
+                    break;
+                }
+        }
+    }
+
+    start(){
         let bpm = (60/this.beats)*1000;
 
-        if(!this.isPlaying){
-        this.isPlaying = setInterval(()=>{
+        if(!this.isPlaying){    
+            this.isPlaying = setInterval(()=>{
             this.step();
-        },bpm);
-        this.playButton.innerHTML = "Stop!!";
+             },bpm);
+             this.playButton.innerHTML = "Stop!!";
+        }
+        else{
+            clearInterval(this.isPlaying);
+            this.isPlaying = null;
+            this.playButton.innerHTML = "Play!";
+        }
     }
-    else{
-        clearInterval(this.isPlaying);
-        this.isPlaying = null;
-        this.playButton.innerHTML = "Play!";
+
+    selectAudio(e){
+        const selectionName = e.target.name;
+        const selectionValue = e.target.value;
+        switch(selectionName){
+            case "kick-select" :
+                this.kickAudio.src = selectionValue;
+                break;
+            case "clap-select" :
+                this.clapAudio.src = selectionValue;
+                break;
+            case "snare-select" :
+                this.snareAudio.src = selectionValue;
+                break;
+            case "hihat-select" :
+                this.hihatAudio.src = selectionValue;
+                break;
+            case "shaker-select" :
+                this.shakerAudio.src = selectionValue;
+                break;
+            
+        }
+        
     }
-    }
+
 }
 
 
@@ -85,23 +157,21 @@ drumstick.pads.forEach(pad=>{
     })
 })
 
+drumstick.selects.forEach(select=>{
+    select.addEventListener("change",(e)=>{
+        drumstick.selectAudio(e);
+    })
+})
+
 
 drumstick.playButton.addEventListener("click",()=>{
     drumstick.start();
 })
 
+drumstick.muteAudio.forEach(mute=>{
+    mute.addEventListener("click",(e)=>drumstick.muteAudioButton(e))
+})
 
-
-
-
-
-
-
-
-
-function updateTextInput(val) {
-   console.log(val); 
-  }
 
 
 

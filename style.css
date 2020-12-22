@@ -52,6 +52,15 @@ header {
   border-radius: 50%;
   background-color: #1db954;
   color: white;
+  transition: all 0.5s ease;
+}
+
+.mute.active {
+  background-color: gray;
+}
+
+.mute i {
+  pointer-events: none;
 }
 
 .snare-pads,
@@ -148,7 +157,9 @@ header {
 #bpm {
   width: 30%;
   margin-top: 1.5rem;
-  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .range {
