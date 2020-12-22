@@ -37,9 +37,7 @@ class DrumKick{
                 if(bar.classList.contains("kick-pad")){
                     this.kickAudio.currentTime = 0;
                     this.kickAudio.play();
-                    this.kickAudio.muted = false;
 
-                   
                 }
                 if(bar.classList.contains("snare-pad")){
                     this.snareAudio.currentTime = 0;
